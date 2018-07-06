@@ -1,8 +1,19 @@
 <h1>User List</h1>
 <br>
-<% @user.each do |user| %>
 
-<%= @users.name %>
-<%= @users.role %>
-
-<% end %>
+<table>
+    <tr>
+    <th>name</th>
+    <th>role</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+    <td><%= user.name %></td>
+    <td><% if  user.is_admin? == true %>            
+        admin</td>
+        <% else %>
+          <td> </td>
+        <% end %>
+    </tr>
+    <% end %>
+</table>
